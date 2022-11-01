@@ -1,5 +1,5 @@
 import React from 'react'
-import { cepMask } from '.'
+import { cepMask } from '../masks'
 
 describe('cepaMask', () => {
   it('should mask a complete cep', () => {

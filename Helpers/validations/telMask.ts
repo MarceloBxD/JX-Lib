@@ -1,5 +1,5 @@
 import React from 'react'
-import { phoneMask } from '.'
+import { phoneMask } from '../masks'
 
 describe('cepaMask', () => {
   it('should mask a complete mobile phone number', () => {

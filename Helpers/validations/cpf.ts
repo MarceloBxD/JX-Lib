@@ -1,5 +1,5 @@
 import React from 'react'
-import { cpfMask } from '.'
+import { cpfMask } from '../masks'
 
 describe('cepaMask', () => {
   it('should mask a complete cpf', () => {
