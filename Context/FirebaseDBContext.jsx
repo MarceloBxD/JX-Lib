@@ -15,14 +15,34 @@ import {
     updateDoc
 } from 'firebase/firestore'
 import { useBoolean } from '@chakra-ui/react'
+
 const FirebaseContext = createContext()
-import { useTools } from './tools'
 
 export function FirebaseProvider({ children }) {
     const [users, setUsers] = useState([])
     const [todos, setTodos] = useState([])
     const [load, setLoad] = useBoolean(false)
-    const { createObject } = useTools()
+
+    const createObject = (
+        name,
+        description,
+        priority,
+        date,
+        badge = null,
+        done = false,
+        id = null,
+    ) => {
+        return {
+            name,
+            description,
+            priority,
+            date,
+            done,
+            id,
+            badge,
+        }
+    }
+
 
     // referencia para as duas collections
     const usersCollection = collection(db, 'users')
