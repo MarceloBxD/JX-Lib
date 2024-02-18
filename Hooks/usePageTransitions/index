@@ -1,0 +1,16 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { useRouter } from "next/router";
+
+export function usePageTransitionAnimation() {
+  const router = useRouter();
+  const ref = useRef(null);
+
+  useEffect(() => {
+    // Animate the main element when the route changes
+    gsap.to(ref.current, { duration: 0.5, x: "100%" });
+    gsap.to(ref.current, { duration: 0.5, x: "0%", delay: 0.5 });
+  }, [router.route, ref.current]);
+
+  return ref;
+}
